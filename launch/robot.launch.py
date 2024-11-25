@@ -69,16 +69,17 @@ def generate_launch_description():
     active_list = [
             "joint_state_broadcaster",
             "force_torque_sensor_broadcaster",
-            "scaled_joint_trajectory_controller"
+#            "scaled_joint_trajectory_controller",
+            "robot1_io_and_status_controller"
             ]
     active_spawners = [controller_spawner(controller) for controller in active_list]
 
     # Inactive controllers
     inactive_list = [
-            "cartesian_compliance_controller",
-            "cartesian_force_controller",
-            "cartesian_motion_controller",
-            "motion_control_handle"
+#            "cartesian_compliance_controller",
+            "cartesian_force_controller" #,
+#            "cartesian_motion_controller",
+#            "motion_control_handle"
             ]
     inactive_spawners = [controller_spawner(controller, "--inactive") for controller in inactive_list]
 
